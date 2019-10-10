@@ -4,6 +4,7 @@ import './App.css';
 import FormContainer from './Components/FormContainer/FormContainer'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AboutUs from './Components/AboutUs/AboutUs'
+import firebase from './firebase.js';
 
 class App extends Component {
     state = {
@@ -43,10 +44,13 @@ class App extends Component {
 
       handleSignUp = (e) => {
         e.preventDefault();
-        const email = this.state.newUser.email.value;
-        const password = this.state.newUser.password.value;
-        console.log(email)
-        console.log(password)
+        const usersRef = firebase.database().ref('users');
+        const newUser = {
+          email: this.state.newUser.email.value,
+          password: this.state.newUser.password.value
+        }
+        console.log(newUser)
+        usersRef.push(newUser);
       }
 
   render() {
