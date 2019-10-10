@@ -35,12 +35,18 @@ class App extends Component {
 
       handleLogIn = (e) => {
         e.preventDefault();
-        console.log('Sign Up!')
+        const email = this.state.newUser.email.value;
+        const password = this.state.newUser.password.value;
+        console.log(email)
+        console.log(password)
       }
 
       handleSignUp = (e) => {
         e.preventDefault();
-        console.log('Sign Up!')
+        const email = this.state.newUser.email.value;
+        const password = this.state.newUser.password.value;
+        console.log(email)
+        console.log(password)
       }
 
   render() {
@@ -48,21 +54,18 @@ class App extends Component {
       <Router>
         <div>
           <nav className='nav-bar'>
-            <div className="App">
-                <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                </header>
-            </div>
             <ul>
             <li style={{ listStyleType: "none" }}>
-                <Link to="/">Home</Link>
-              </li>
-              <li style={{ listStyleType: "none" }}>
-                <Link to="/signup">Signup</Link>
-              </li>
-              <li style={{ listStyleType: "none" }}>
-                <Link to="/about">About Us</Link>
-              </li>
+              <Link to="/">
+                <img src={logo} className="App-logo" alt="logo" />
+              </Link>
+            </li>
+            <li style={{ listStyleType: "none" }}>
+              <Link to="/signup">Sign Up</Link>
+            </li>
+            <li style={{ listStyleType: "none" }}>
+              <Link to="/about">About Us</Link>
+            </li>
             </ul>
           </nav>
           <Switch>
@@ -78,8 +81,10 @@ class App extends Component {
               <AboutUs />
             </Route>
             <Route path="/">
-              <div style={{ textAlign: "center", fontSize: "10vmin" }}>
-                HOMEPAGE!
+              <div>
+                <h1>
+                  HOMEPAGE
+                </h1>
               </div>
             </Route>
           </Switch>

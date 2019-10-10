@@ -9,10 +9,10 @@ const FormContainer = ({ handleLogIn, handleSignUp, handleChange, newUser }) => 
   return (
     <>
       <div className='visible-group'>
-        <form className='container' onSubmit={handleSignUp}>
+        <form onSubmit={handleSignUp}>
           {
             Object.entries(newUser).map(([dataName, data], index) => 
-              <TextInput type={'text'}
+              <TextInput
                 key={index}
                 name={dataName}
                 value={data.value}
