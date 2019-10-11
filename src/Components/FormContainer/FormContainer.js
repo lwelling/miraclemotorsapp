@@ -11,7 +11,7 @@ const FormContainer = ({ handleLogIn, handleSignUp, handleChange, newUser }) => 
       <div className='visible-group'>
         <form onSubmit={handleSignUp}>
           {
-            Object.entries(newUser).map(([dataName, data], index) => 
+            Object.entries(newUser).map(([dataName, data], index) => dataName === "isAuthenticated" ? null : ( 
               <TextInput
                 key={index}
                 name={dataName}
@@ -19,7 +19,7 @@ const FormContainer = ({ handleLogIn, handleSignUp, handleChange, newUser }) => 
                 placeholder={data.prettyName}
                 type={data.type}
                 handleChange={e => handleChange(e.target.value, dataName)}
-              />
+              />)
             )    
           }
             <Button
