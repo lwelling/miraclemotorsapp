@@ -12,8 +12,6 @@ const AboutUs = () => {
           <br /> With over 200 units turning each month, we know the importance of delivering inventory that sells quickly. 
           <br /> If you are a dealer, check out our diverse inventory and find your next deal. 
           <br /><strong>Remember- if it's a good one, it's a Miracle!</strong>
-          <br /><a href="/signup">
-            Sign up for access today!</a>
         </h3>
         </div>
     </>
