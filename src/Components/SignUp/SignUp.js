@@ -27,9 +27,6 @@ const SignUp = ({ history }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  if (currentUser) {
-    return <Redirect to="/" />;
-  }
   return (
     <>
       <Button variant="dark" onClick={handleShow}>
@@ -41,9 +38,7 @@ const SignUp = ({ history }) => {
           <Modal.Title>Sign up</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
-            <form onSubmit={handleSignUp}>
-              <Form>
+              <Form onSubmit={handleSignUp}>
                 <Form.Group controlId="email">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control type="email" placeholder="Enter email" />
@@ -56,22 +51,17 @@ const SignUp = ({ history }) => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
+                <Form.Group>
                   <Form.Check
-                    type="checkbox"
+                    required
                     label="I am a licensed auto dealer"
+                    feedback="Must be a licensed dealer to proceed."
                   />
                 </Form.Group>
-                <Button
-                  size="sm"
-                  variant="primary"
-                  type="submit"
-                >
+                <Button size="sm" variant="primary" type="submit">
                   Sign up
                 </Button>
               </Form>
-            </form>
-          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={(handleSignUp, handleClose)}>

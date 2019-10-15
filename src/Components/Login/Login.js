@@ -26,13 +26,9 @@ const Login = ({ history }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  if (currentUser) {
-    return <Redirect to="/" />;
-  }
-
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Login
       </Button>
 
@@ -41,9 +37,7 @@ const Login = ({ history }) => {
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
-            <form onSubmit={handleLogin}>
-              <Form>
+              <Form onSubmit={handleLogin}>
                 <Form.Group controlId="email">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control type="email" placeholder="Enter email" />
@@ -60,8 +54,6 @@ const Login = ({ history }) => {
                   Log in
                 </Button>
               </Form>
-            </form>
-          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button

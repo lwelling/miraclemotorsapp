@@ -7,7 +7,7 @@ const AboutUs = () => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow}>
         About Us
       </Button>
 
